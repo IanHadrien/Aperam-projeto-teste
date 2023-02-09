@@ -35,12 +35,6 @@ class UsuarioController {
   // Update
   async update(req, res) {
     try {
-      if (!req.params.id) {
-        return res.status(400).json({
-          errors: ['ID não enviado.'],
-        });
-      }
-
       const usuario = await Usuario.findByPk(req.params.id);
 
       if (!usuario) {
