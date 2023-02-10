@@ -1,0 +1,62 @@
+.Login-container {
+  display: flex;
+}
+
+.Login-ImageBackground  img {
+  max-height: 100vh;
+  background-color: #cccccc;
+  background-position: center;
+  /* filter: brightness(60%); */
+  /* width: 900px; */
+}
+
+/* @media (max-width: 992px) {
+  .Login-ImageBackground {
+    display: none!important;
+  }
+} */
+
+/* Logo */
+.Login-Logo img {
+  width: 235px;
+}
+
+/* Form */
+.Login-FormContainer {
+  width: 100vw;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login-Form {
+  /* border: 1px solid red; */
+  width: 450px;
+  padding: 2rem 0 1rem 0;
+}
+
+.Login-LogoText {
+  text-align: center;
+}
+
+.Login-buttonEntrar {
+  width: 100%;
+  background-color: #582058!important;
+  border: #582058;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.Login-NewCont {
+  text-align: end;
+}
+
+.Login-label {
+  padding-bottom: 0.5rem;
+}
+
+.Login-LinkNewCont {
+  text-decoration: none;
+}

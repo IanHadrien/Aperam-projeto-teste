@@ -1,0 +1,19 @@
+#bg-login {
+    background-image: url("../img/bg-login.jpg");
+    min-height: 100vh;
+    background-color: #cccccc;
+    background-position: center;
+    filter: brightness(60%);
+}
+
+form.acesso {
+    margin-top: 27vh;
+}
+
+form.cadastro {
+    margin-top: 20vh;
+}
+
+#img-logo {
+    width: 245px;
+}
