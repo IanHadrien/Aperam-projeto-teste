@@ -18,7 +18,9 @@ class UsuarioController {
       const usuario = await Usuario.findAll();
       return res.json(usuario);
     } catch (e) {
-      return res.json(null);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -26,9 +28,18 @@ class UsuarioController {
   async show(req, res) {
     try {
       const usuario = await Usuario.findByPk(req.params.id);
+
+      if (!usuario) {
+        return res.status(400).json({
+          errors: ['Usuário não encontrado'],
+        });
+      }
+
       return res.json(usuario);
     } catch (e) {
-      return res.json(null);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -71,7 +82,7 @@ class UsuarioController {
       }
 
       await usuario.destroy();
-      return res.json(usuario);
+      return res.json({ message: 'Usuário excluído com sucesso.' });
     } catch (e) {
       return res.status(400).json({
         errors: e.errors.map((err) => err.message),
