@@ -1,10 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ImageBackground from '../../assets/img/paisagem.png';
 import Logo from '../../assets/img/logo.png';
 import './login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import Alert from '@mui/material/Alert';
+import axios from '../../services/axios';
 
 export const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [formErro, setFormErro] = useState(false);
+  const [erroMensage, setErroMensage] = useState('');
+
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if(!email) {
+      setFormErro(true);
+      setErroMensage('Digite um e-mail inválido');
+      return
+    }
+
+    if(!password) {
+      setFormErro(true);
+      setErroMensage('Digite um senha inválida');
+      return
+    }
+
+    const regTemp = {
+      email, password,
+    };
+
+    await axios.post('/tokens/', regTemp).then((respose) => {
+      console.log('Success: ', respose.data);
+      setFormErro(false);
+      navigate('/dashbord');
+    }).catch((err) => {
+      console.log('Error');
+      setFormErro(true);
+      setErroMensage('Usuário não existe');
+    });
+    console.log("Dados: ", email, password);
+  }
+
   return (
     <div className='Login-container'>
       <div className='Login-ImageBackground'>
@@ -31,10 +72,14 @@ export const Login = () => {
                 </label>
                 <div className="input-group mb-2 mr-sm-2">
                   <div className="input-group-prepend">
-                    <div className="input-group-text">@</div>
+                    <div className="input-group-text">
+                      <i className='Login-Icon bx bx-envelope'></i>
+                    </div>
                   </div>
-                  <input type="text" className="form-control" 
-                  id="inlineFormInputGroupUsername2" placeholder="E-mail" />
+                  <input type="email" className="form-control" 
+                    placeholder="E-mail" 
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
                 </div>
               </div>
               
@@ -44,10 +89,14 @@ export const Login = () => {
                 </label>
                 <div className="input-group mb-2 mr-sm-2">
                   <div className="input-group-prepend">
-                    <div className="input-group-text">@</div>
+                    <div className="input-group-text">
+                      <i className='Login-Icon bx bx-lock-alt'></i>
+                    </div>
                   </div>
-                  <input type="text" className="form-control" 
-                  id="inlineFormInputGroupUsername2" placeholder="********" />
+                  <input type="password" className="form-control" 
+                    placeholder="********" 
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
               </div>
               
@@ -59,10 +108,20 @@ export const Login = () => {
               </Link>
               
               <div className='pt-2'>
-                <button type="submit" className="Login-buttonEntrar btn btn-primary mb-2">
+                <button 
+                  type="submit" 
+                  className="Login-buttonEntrar btn btn-primary mb-2"
+                  onClick={handleSubmit}
+                >
                   Entrar
                 </button>
               </div>
+
+              { formErro &&
+              <Alert variant="outlined" severity="error">
+                {erroMensage}
+              </Alert>
+              }
               
             </form>
           </div>

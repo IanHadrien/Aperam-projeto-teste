@@ -60,3 +60,29 @@
 .Login-LinkNewCont {
   text-decoration: none;
 }
+
+.Login-Icon {
+  font-size: 24px;
+}
+
+@media (max-width: 1250px) {
+  .Login-ImageBackground img {
+    width: 70vw;
+    height: 100vw;
+    width: 700px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .Login-ImageBackground img {
+    width: 70vw;
+    height: 100vw;
+    width: 500px;
+  }
+}
+
+@media (max-width: 940px) {
+  .Login-ImageBackground img {
+    display: none;
+  }
+}
