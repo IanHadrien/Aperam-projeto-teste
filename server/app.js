@@ -1,6 +1,9 @@
 import dotenv from 'dotenv';
 import { resolve } from 'path';
 
+// eslint-disable-next-line import/order
+const cors = require('cors');
+
 dotenv.config();
 
 import './src/database';
@@ -22,6 +25,7 @@ class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use(express.static(resolve(__dirname, 'uploads')));
+    this.app.use(cors());
   }
 
   routes() {
