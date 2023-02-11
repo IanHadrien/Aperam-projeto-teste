@@ -212,6 +212,7 @@ label #sidebar_btn:hover {
       margin-top: 0;
       padding: 10px 20px;
       transition: 0s;
+      margin-top: 90px;
   }
 
   #check:checked~.content {
@@ -279,4 +280,25 @@ label #sidebar_btn:hover {
   .active {
       display: block;
   }
+}
+
+.Container-Title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Container-Title i {
+  padding-bottom: 0.6rem;
+}
+
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 100%;
+  }
+}
+
+.My-Perfil-Salvar:hover {
+  background-color: #F1511B!important;
+  transition: 0.5s;
 }

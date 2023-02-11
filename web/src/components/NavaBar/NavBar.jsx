@@ -1,6 +1,7 @@
 import React from 'react'
 import './NavBar.css';
 import Logo from '../../assets/img/logo.png';
+import { Link } from 'react-router-dom';
 
 const name = localStorage.getItem("name");
 
@@ -27,31 +28,36 @@ export const NavBar = () => {
 
       {/* <!--mobile navigation bar start--> */}
       <div className="mobile_nav">
-          <div className="mobile_nav_items">
-              <a href="#"><i className='bx bx-data'></i><span>Dashboard</span></a>
-              <a href="#"><i className='bx bxs-image'></i><span>Fotos</span></a>
-              <a href="#"><i className='bx bx-user-circle'></i><span>Meu Perfil</span></a>
-              <a className='NavBar-BordEnd' href="#"><i className='bx bx-log-in'></i><span>Sair</span></a>
-          </div>
+        <div className="mobile_nav_items">
+          <Link to='/dashbord'>
+            <i className='bx bx-data'></i><span>Dashboard</span>
+          </Link>
+          <Link to='/fotos'>
+            <i className='bx bxs-image'></i><span>Fotos</span>
+          </Link>
+          <Link to='/usuario'>
+            <i className='bx bx-user-circle'></i><span>Meu Perfil</span>
+          </Link>
+          <Link className='NavBar-BordEnd' to='/'>
+            <i className='bx bx-log-in'></i><span>Sair</span>
+          </Link>
+        </div>
       </div>
 
       <div className="sidebar">
-          <a href="#"><i className='bx bx-data'></i><span>Dashboard</span></a>
-          <a href="#"><i className='bx bxs-image'></i><span>Fotos</span></a>
-          <a href="#"><i className='bx bx-user-circle'></i><span>Meu Perfil</span></a>
-          <a className='NavBar-BordEnd' href="#"><i className='bx bx-log-in'></i><span>Sair</span></a>
+        <Link to='/dashbord'>
+          <i className='bx bx-data'></i><span>Dashboard</span>
+        </Link>
+        <Link to='/fotos'>
+          <i className='bx bxs-image'></i><span>Fotos</span>
+        </Link>
+        <Link to='/usuario'>
+          <i className='bx bx-user-circle'></i><span>Meu Perfil</span>
+        </Link>
+        <Link className='NavBar-BordEnd' to='/'>
+          <i className='bx bx-log-in'></i><span>Sair</span>
+        </Link>
       </div>
-
-      {/* <div className="content">
-          <div className="card">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-          </div><div className="card">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-          </div>
-          <div className="card">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-          </div>
-      </div> */}
 
     </div>
   )
