@@ -37,9 +37,15 @@ export const Login = () => {
     await axios.post('/tokens/', regTemp).then((respose) => {
       console.log('Success: ', respose.data);
       setFormErro(false);
+
+      localStorage.setItem("token", respose.data.token);
+      localStorage.setItem("email", respose.data.user.email);
+      localStorage.setItem("id", respose.data.user.id);
+      localStorage.setItem("name", respose.data.user.name);
+
       navigate('/dashbord');
     }).catch((err) => {
-      console.log('Error');
+      console.log('Error', err.message);
       setFormErro(true);
       setErroMensage('Usuário não existe');
     });

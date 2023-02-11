@@ -4,6 +4,7 @@ import Logo from '../../assets/img/logo.png';
 import './login.css';
 import { Link } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
+import axios from '../../services/axios';
 
 export const Register = () => {
   const [name, setName] = useState('');
@@ -14,7 +15,14 @@ export const Register = () => {
   const [formErro, setFormErro] = useState(false);
   const [erroMensage, setErroMensage] = useState('');
 
-  function handleSubmit(e) {
+  function clearSubmit() {
+    setName('');
+    setEmail('');
+    setPassword('');
+    setPassword2('');
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
 
     if(!name) {
@@ -38,8 +46,20 @@ export const Register = () => {
       return
     }
 
+    const regTemp = {
+      name, email, password,
+    };
+
+    await axios.post('/usuario/', regTemp).then((respose) => {
+      setFormErro(false);
+      clearSubmit();
+    }).catch((err) => {
+      console.log('Error', err.message);
+      setFormErro(true);
+      setErroMensage('Usuário não pode ser cadastrado');
+    });
+
     console.log("Dados: ", name, email, password);
-    setFormErro(false);
   }
 
   return (
@@ -74,6 +94,7 @@ export const Register = () => {
                   </div>
                   <input type="text" className="form-control" 
                     placeholder="Digite seu nome"
+                    value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
@@ -90,7 +111,8 @@ export const Register = () => {
                     </div>
                   </div>
                   <input type="text" className="form-control" 
-                    placeholder="Digite seu e-mail" 
+                    placeholder="Digite seu e-mail"
+                    value={email} 
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
@@ -108,6 +130,7 @@ export const Register = () => {
                   </div>
                   <input type="password" className="form-control" 
                     placeholder="********" 
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
@@ -125,6 +148,7 @@ export const Register = () => {
                   </div>
                   <input type="password" className="form-control" 
                     placeholder="********"
+                    value={password2}
                     onChange={(e) => setPassword2(e.target.value)}
                   />
                 </div>
