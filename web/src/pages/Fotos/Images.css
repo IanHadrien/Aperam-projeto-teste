@@ -1,0 +1,95 @@
+.Image-Button-add {
+  display: flex;
+  align-items: center;
+}
+
+.Image-Button-add span {
+  padding-left: 0.5rem;
+}
+
+.Image-Button-Container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 1rem;
+}
+
+.Images-Url {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.Images-Url img {
+  height: 150px;
+}
+
+.Images-OriginalName {
+  /* flex items-center justify-center duration-300 */
+  width: 100%;
+  background-color: cadetblue;
+  opacity: 0;
+
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 300ms;
+}
+
+.Imagens-Modal-Button {
+  display: flex;
+  align-items: center;
+}
+
+.Imagens-Modal-Button i {
+  font-size: 20px;
+  padding-top: 0.3rem;
+  padding-right: 0.5rem;
+}
+
+.Color-Green {
+  background-color: green;
+  border-color: green;
+}
+
+.Color-Green:hover {
+  background-color: rgb(10, 101, 10);
+  transition: 0.5s;
+}
+
+.Images-Dropzone {
+  border: 3px dotted #ccc;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Images-DropZone-Selecionar {
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  border-radius: 7px;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 40%;
+  cursor: pointer;
+}
+
+.Images-DropZone-Selecionar:hover {
+  background-color: #eae9e9;
+  transition: 0.5s;
+}
+
+.Images-Heigth {
+  height: 100px;
+}
+
+.Images-Grid-Upload {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Images-Upload {
+  padding-bottom: 1rem;
+}

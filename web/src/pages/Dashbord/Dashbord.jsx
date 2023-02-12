@@ -13,7 +13,10 @@ export const Dashbord = () => {
         </h1>
 
         <div className='container border shadow rounded px-4 pb-4 pt-2 mb-5'>
-          Teste
+          <h2>Upload de Arquivos</h2>
+
+          <hr className='my-3'/>
+          <h2>Arquivos (da semana atual)</h2>
         </div>
       </div>
     </div>

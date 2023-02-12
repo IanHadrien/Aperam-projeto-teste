@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './NavBar.css';
 import Logo from '../../assets/img/logo.png';
 import { Link } from 'react-router-dom';
 
-const name = localStorage.getItem("name");
-
 export const NavBar = () => {
+  const [name, setName] = useState(localStorage.getItem("name"));
+
   return (
     <div id='NavBar-Body'>
       
