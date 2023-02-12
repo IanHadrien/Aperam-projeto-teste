@@ -1,0 +1,98 @@
+.Dashbord-TableContainer {
+  background-color: rgb(245, 245, 245)!important;
+  padding: 0 1rem 0 1rem;
+}
+
+.Dashbord-TableRow {
+  font-weight: bold !important;
+  font-size: 15px;
+}
+
+.Dashbord-TablePagination .MuiToolbar-root  {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  /* text-align: center; */
+}
+
+.Dashbord-TablePagination .MuiTablePagination-selectLabel {
+  padding-top: 1rem;
+}
+
+.Dashbord-TablePagination .MuiSelect-select {
+  border: 1px solid rgb(184, 184, 184);
+}
+
+.Dashbord-TablePagination .MuiTablePagination-displayedRows {
+  padding-top: 1rem;
+}
+
+.Dashbord-TablePagination .MuiTablePagination-actions button {
+  border: 1px solid rgb(184, 184, 184);
+  cursor: pointer;
+}
+
+.Dashbord-TablePagination .MuiTablePagination-actions button:hover {
+  background-color: rgb(184, 184, 184);
+}
+
+.Dashbord-TableRow-Hover:hover {
+  background-color: rgb(224, 224, 224);
+  transition: 0.5s;
+}
+
+.Dashbord-btn {
+  padding: 0;
+}
+
+.Dashbord-btn span {
+  font-size: 20px;
+  color: white;
+  padding: 0.3rem;
+}
+
+.DashBord-Buttons-Upload {
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+
+.DashBord-Buttons-Upload button {
+  color: #0d6efd;
+  border: none;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.DashBord-Buttons-Upload .Buttons-Upload1 {
+  border-radius: 10px 10px 0 0;
+  background-color: white;
+  color: black;
+  border-left: 1px solid rgb(187, 187, 187);
+  border-right: 1px solid rgb(187, 187, 187);
+  border-top: 1px solid rgb(187, 187, 187);
+}
+
+.Buttons-Upload1-Hover:hover {
+  border-radius: 10px 10px 0 0;
+  border-right: 1px solid rgb(187, 187, 187);
+  border-top: 1px solid rgb(187, 187, 187);
+}
+
+.DashBord-Buttons-Upload .Buttons-Upload2 {
+  border-radius: 10px 10px 0 0;
+  background-color: white;
+  color: black;
+  border-left: 1px solid rgb(187, 187, 187);
+  border-right: 1px solid rgb(187, 187, 187);
+  border-top: 1px solid rgb(187, 187, 187);
+}
+
+.Buttons-Upload2-Hover:hover {
+  border-radius: 10px 10px 0 0;
+  border-right: 1px solid rgb(187, 187, 187);
+  border-top: 1px solid rgb(187, 187, 187);
+  /* transition: 0.5s; */
+}
+
+.Dashbord-Search {
+  background-color: rgb(245, 245, 245);
+}
