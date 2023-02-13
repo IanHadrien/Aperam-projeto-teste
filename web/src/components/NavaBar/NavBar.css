@@ -28,7 +28,7 @@
 
   color: rgba(0,0,0,.55);
   border: 2px solid #582058;
-  border-radius: 15px;
+  border-radius: 25px;
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   margin-bottom: 0.6rem;
   cursor: pointer;
@@ -37,6 +37,12 @@
 .NavBarright_area i {
   padding-right: 0.3rem;
   font-size: 20px;
+}
+
+.NavBarright_area .bx-chevron-down {
+  padding-right: 0;
+  padding-left: 0.2rem;
+  font-size: 30px;
 }
 
 .left_area img {
@@ -253,8 +259,13 @@ label #sidebar_btn:hover {
   }
 
   .mobile_nav_items {
-      background: #2F323A;
+      background: #582058;
       display: none;
+      margin-top: 7rem;
+  }
+
+  .mobile_nav_items_MOBILE {
+      display: block !important;
   }
 
   .mobile_nav_items a {
@@ -270,7 +281,7 @@ label #sidebar_btn:hover {
   }
 
   .mobile_nav_items a:hover {
-      background: #19B3D3;
+      background: #F1511B;
   }
 
   .mobile_nav_items i {
@@ -301,4 +312,16 @@ label #sidebar_btn:hover {
 .My-Perfil-Salvar:hover {
   background-color: #F1511B!important;
   transition: 0.5s;
+}
+
+.Popover-Menu {
+  text-decoration: none;
+  padding: 0 2rem 0.5rem 0;
+  color: black;
+}
+
+@media (max-width: 760px) {
+  .Popover-container {
+    display: none;
+  }
 }
