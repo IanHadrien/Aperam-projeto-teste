@@ -20,13 +20,13 @@ export const Login = () => {
     e.preventDefault();
     if(!email) {
       setFormErro(true);
-      setErroMensage('Digite um e-mail inválido');
+      setErroMensage('Digite um e-mail válido');
       return
     }
 
     if(!password) {
       setFormErro(true);
-      setErroMensage('Digite um senha inválida');
+      setErroMensage('Digite um senha válida');
       return
     }
 

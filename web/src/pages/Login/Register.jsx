@@ -14,6 +14,7 @@ export const Register = () => {
 
   const [formErro, setFormErro] = useState(false);
   const [erroMensage, setErroMensage] = useState('');
+  const [typeErroMensage, setTypeErroMensage] = useState('error');
 
   function clearSubmit() {
     setName('');
@@ -25,19 +26,20 @@ export const Register = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    setTypeErroMensage('error');
     if(!name) {
       setFormErro(true);
-      setErroMensage('Digite um nome inválido');
+      setErroMensage('Digite um nome válido');
       return
     }
     if(!email) {
       setFormErro(true);
-      setErroMensage('Digite um e-mail inválido');
+      setErroMensage('Digite um e-mail válido');
       return
     }
     if(!password) {
       setFormErro(true);
-      setErroMensage('Digite um senha inválida');
+      setErroMensage('Digite um senha válida');
       return
     }
     if(password !== password2) {
@@ -51,7 +53,10 @@ export const Register = () => {
     };
 
     await axios.post('/usuario/', regTemp).then((respose) => {
-      setFormErro(false);
+      console.log(respose.data)
+      setFormErro(true);
+      setErroMensage('Usuário cadastrado com sucesso');
+      setTypeErroMensage('success');
       clearSubmit();
     }).catch((err) => {
       console.log('Error', err.message);
@@ -167,12 +172,12 @@ export const Register = () => {
                     className="Login-buttonEntrar btn btn-primary mb-2"
                     onClick={handleSubmit}
                   >
-                  Entrar
+                  Salvar
                 </button>
               </div>
 
               { formErro &&
-              <Alert variant="outlined" severity="error">
+              <Alert variant="outlined" severity={typeErroMensage}>
                 {erroMensage}
               </Alert> }
               

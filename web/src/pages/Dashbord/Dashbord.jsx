@@ -6,6 +6,7 @@ import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, X
 import Swal from 'sweetalert2';
 import { NavBar } from '../../components/NavaBar/NavBar'
 import axios from '../../services/axios';
+import axios2 from 'axios';
 import './Dashbord.css';
 
 const labelDisplayedRows = ({ from, to, count }) => `${from}-${to} de ${count}`;
@@ -53,6 +54,23 @@ export const Dashbord = () => {
 
   const handleDownload = (image) => { 
     console.log(image)
+    saveAs(image.file_url, image.originalname);
+
+    // axios2({
+    //     headers: { 'Content-Type': 'Access-Control-Allow-Headers' },
+    //     url: image.file_url,
+    //     method: 'GET',
+    //     responseType: 'blob',
+    // }).then((response) => {
+    //     // Create a link element to trigger the download
+    //     const link = document.createElement('a');
+    //     link.href = window.URL.createObjectURL(new Blob([response.data]));
+    //     link.setAttribute('download', 'downloaded-file'); // set the file name
+    //     document.body.appendChild(link);
+    //     link.click();
+    // }).catch((error) => {
+    //     console.log(error);
+    // });
   }
 
   const handleDelete = (image) => { 
